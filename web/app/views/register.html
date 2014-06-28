@@ -5,33 +5,33 @@
             <div class="row form-group">
                 <div class="col-xs-6">
                     <label for="firstname">First name</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" maxlength="255" autofocus />
+                    <input type="text" class="form-control" id="firstname" name="firstname" data-bind="value: firstName" placeholder="First Name" maxlength="255" autofocus />
                 </div>
                 <div class="col-xs-6">
                     <label for="lastname">Last name</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" maxlength="255" />
+                    <input type="text" class="form-control" id="lastname" name="lastname"  data-bind="value: lastName" placeholder="Last Name" maxlength="255" />
                 </div>
             </div>
             <div class="form-group">
                 <label for="dob">Date of birth</label>
-                <input type="date" class="form-control" id="dob" name="dob" />
+                <input type="date" class="form-control" id="dob" name="dob" data-bind="value: dob" />
             </div>
             <div class="form-group">
                 <label for="init-balance">Initial balance</label>
-                <input type="number" class="form-control" id="init-balance" pattern="^\d+(\.|\,)\d{2}$" name="init-balance" placeholder="0.00" />
+                <input type="number" class="form-control" id="init-balance" data-bind="value: initBalance" pattern="^\d+(\.|\,)\d{2}$" name="init-balance" placeholder="0.00" />
             </div>
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" maxlength="255" />
+                <input type="email" class="form-control" id="email" name="email" data-bind="value: email" placeholder="Email Address" maxlength="255" />
             </div>
             <div class="row form-group">
                 <div class="col-xs-6">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" maxlength="72"/>
+                    <input type="password" class="form-control" id="password" name="password" data-bind="value: password" placeholder="Password" maxlength="72"/>
                 </div>
                 <div class="col-xs-6">
                     <label for="password">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm Password" maxlength="72"/>
+                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" data-bind="value: confirmPassword" placeholder="Confirm Password" maxlength="72"/>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
