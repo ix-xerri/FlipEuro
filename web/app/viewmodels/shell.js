@@ -8,9 +8,8 @@ define(['plugins/router', "durandal/app"], function (router, app) {
 
         activate: function () {
             router.map([
-                { route: '', moduleId: 'viewmodels/home', title: "Home", nav: true },
-                {"route":"login","moduleId":"viewmodels/login","title":"login","nav":true},
-                {"route":"register","moduleId":"viewmodels/register","title":"register","nav":true},
+                {"route":"","moduleId":"viewmodels/login","title":"Login","nav":true},
+                {"route":"register","moduleId":"viewmodels/register","title":"Register","nav":true},
                 /*{durandal:routes}*/
             ]).buildNavigationModel();
             

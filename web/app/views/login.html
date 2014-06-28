@@ -2,5 +2,11 @@
     <div class="page-header">
         <h1>login</h1>
     </div>
-    <p>Your content here</p>
+    <form class="frm-account" novalidate>
+        <input type="email" name="email" placeholder="Email Address" maxlength="255" autofocus />
+        <input type="password" name="password" placeholder="Password" maxlength="72"/>
+        <input type="checkbox" name="remember" id="remember"/><label for="remember">Remember me</label>
+        <button class="btn btn-main-submit" type="submit">Sign In</button>
+        <div class="alternate"><a href="#user/forgot-password/">Forgot Password?</a></div>
+    </form>
 </section>
