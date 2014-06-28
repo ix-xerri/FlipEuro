@@ -15,25 +15,15 @@
                     <a data-bind="attr: { href: hash }, text: title"></a>
                 </li>
             </ul>
-            <form class="navbar-form navbar-right navbar-search" role="search" data-bind="submit: search">
-                <label for="global-search" class="sr-only">Search</label>
-                <div class="input-group">
-                    <input type="text" id="global-search" name="global-search" class="form-control" placeholder="Search..." />
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <span class="sr-only">Search</span>
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-            </form>
         </div>
     </div>
 </header>
+<!--
 <div class="router-loader" data-bind="visible: router.isNavigating">
     <i class="fa fa-spinner fa-2x fa-spin active"></i>
 </div>
-<section id="main" class="container" data-bind="router: { transition:'entrance', cacheViews:true }"></section>
+-->
+<section id="main" class="container" data-bind="router: { cacheViews:true }"></section>
 <footer class="well">
     This is your footer
 </footer>
