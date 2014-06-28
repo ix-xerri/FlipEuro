@@ -14,6 +14,9 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
 
     return {
         // Place your public properties here
+        email: ko.observable(),
+        password: ko.observable(),
+        
         activate: activate,
         deactivate: deactivate
     };
