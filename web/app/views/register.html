@@ -1,6 +1,6 @@
 <section id="page-register" class="page">
     <div class="page-header">
-        <h1>register</h1>
+        <h1>Register</h1>
     </div>
     <h1>Login to your Account</h1>
     <form class="frm-account" role="form">
@@ -27,11 +27,19 @@
         <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Password" maxlength="72"/>
+            <div class="password-strength">
+                <div class="password-indicator clearfix">
+                    <div class="password-weak left"></div>
+                    <div class="password-so-so left"></div>
+                    <div class="password-good left"></div>
+                    <div class="password-very-good left"></div>
+                </div>
+                <div class="password-text"></div>
+            </div>
         </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Remember me
-            </label>
+        <div class="form-group">
+            <label for="password">Confirm Password</label>
+            <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm Password" maxlength="72"/>
         </div>
         <button type="submit" class="btn btn-primary">Register</button>
     </form>
