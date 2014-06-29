@@ -43,3 +43,23 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap'],
         app.setRoot('viewmodels/shell');
     });
 });
+
+//Database
+appDb = {
+    accounts: [{
+        id: 0,
+        firstName: "Matthew",
+        lastName: "Xerri",
+        dob: 1987-08-30,
+        balance: {
+            currency: '$',
+            amount: 25.50
+        },
+        email: "matt.xerri@gmail.com",
+        password: "",
+        creditCards:[
+            {id: 0, cardNumber: "4716839212897076", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"},
+            {id: 1, cardNumber: "4506106136972912", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"}
+        ]
+    }]
+};
