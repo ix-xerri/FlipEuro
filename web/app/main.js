@@ -11,11 +11,11 @@ requirejs.config({
         'zxcvbn': '../bower_components/zxcvbn/zxcvbn-async',
     },
     shim: {
-    bootstrap: {
+        bootstrap: {
             deps: ['jquery'],
             exports: 'jQuery'
         },
-    modernizr: {
+        modernizr: {
             exports: 'Modernizr'
         }
     }
