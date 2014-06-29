@@ -62,6 +62,11 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
             });
             return;
         },
+        
+        deposit = function(){
+            appDb.accounts[0].balance.amount = parseFloat(this.currentAmount()) + parseFloat(this.depositAmount());
+            console.log(this.currentAmount());
+        },
 
         // Lifecycle
 
@@ -77,11 +82,21 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
             {id: 0, cardNumber: "4716839212897076", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"},
             {id: 1, cardNumber: "4506106136972912", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"}
         ]),
+        
+        // add card
         cardNumber: ko.observable(""),
         nameOnCard: ko.observable(""),
         expirationDate: ko.observable(""),
         
         addCreditCard: addCreditCard,
+        
+        // deposit
+        depositFromCard: ko.observable(""),
+        depositAmount: ko.observable(""),
+        currentCurrency: ko.observable(appDb.accounts[0].balance.currency),
+        currentAmount: ko.observable(appDb.accounts[0].balance.amount),
+        
+        deposit: deposit,
         
         activate: activate,
         deactivate: deactivate

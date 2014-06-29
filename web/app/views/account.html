@@ -43,4 +43,22 @@
             <button type="submit" class="btn btn-primary btn-sm">Add Credit Card</button>
         </form>
     </div>
+    <hr/>
+    <h2>Funds</h2>
+    <h4>Current Amount: <span data-bind="text: currentCurrency"></span><span data-bind="text: currentAmount"></span></h4>
+    <div class="deposit">
+        <form class="frm-deposit" role="form" data-bind="submit: deposit" >
+            <div class="row form-group">
+                <div class="col-xs-3">
+                    <label for="deposit-from-card">Select Credit Card</label>
+                    <select class="form-control input-sm" id="deposit-from-card" name="deposit-from-card" data-bind="options: $root.creditCards, value: depositFromCard, optionsText: 'cardNumber'"></select>
+                </div>
+                <div class="col-xs-3">
+                    <label for="deposit-amount">Amount</label>
+                    <input type="number" class="form-control input-sm" id="deposit-amount" data-bind="value: depositAmount" pattern="^\d+(\.|\,)\d{2}$" name="deposit-amount" placeholder="0.00" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">Deposit</button>
+        </form>
+    </div>
 </section>
