@@ -11,20 +11,36 @@
 <section id="page-account" class="page">
     <h1>Account</h1>
     <h2>Credit Cards</h2>
-    <div class="panel-group" id="accordion">
+    <div class="panel-group" id="accordion" data-bind="foreach: {data: creditCards, as: 'card'}">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                        Collapsible Group Item #1
-                    </a>
+                    <a data-toggle="collapse" data-bind="text: cardNumber, attr: { href : '#collapse' + card.id, 'data-target': '#collapse' + card.id}" data-parent="#accordion"></a>
                 </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    VHS.
-                </div>
+            <div data-bind="attr: { id: 'collapse' + card.id }" class="panel-collapse collapse in">
+                <div class="panel-body" data-bind="text: nameOnCard"></div>
             </div>
       </div>
+    </div>
+    <h4>Add Credit Card</h4>
+    <div class="add-credit-card">
+        <form class="frm-add-credit-card" role="form" data-bind="submit: addCreditCard" >
+            <div class="row form-group">
+                <div class="col-xs-3">
+                    <label for="card-number">Credit Card Number</label>
+                    <input type="text" class="form-control input-sm" id="card-number" name="card-number" data-bind="value: cardNumber" placeholder="Credit Card Number" maxlength="255" />
+                </div>
+                <div class="col-xs-3">
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" class="form-control input-sm" id="card-name" name="card-name" data-bind="value: nameOnCard" placeholder="Name on Card" maxlength="255" />
+                </div>
+                <div class="col-xs-3">
+                    <label for="exp-date">Expiration Date</label>
+                    <input type="month" class="form-control input-sm" id="exp-date" name="exp-date" data-bind="value: expirationDate" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">Add Credit Card</button>
+        </form>
     </div>
 </section>
