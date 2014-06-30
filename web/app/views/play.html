@@ -2,20 +2,34 @@
     <div class="page-header">
         <h1>Play</h1>
     </div>
-    <div class="coin flip-animation">
-        $
+    <div class="coin">
+        <span data-bind="text: selectedCoin"></span>
     </div>
     <div>
-        <form class="frm-play" role="form">
+        <form class="frm-play" role="form" data-bind="submit: placeBet">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="coinSide" id="heads" value="0" data-bind="checked: selectedSide">
+                        Heads
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="coinSide" id="tails" value="1" data-bind="checked: selectedSide">
+                        Tails
+                </label>
+            </div>
             <div class="row form-group">
                 <div class="col-xs-3">
                     <label for="coin">Coin</label>
-                    <select class="form-control input-sm" id="coin" name="coin" data-bind="options: $root.coins, optionsText: 'currency'"></select>
+                    <select class="form-control input-sm" id="coin" name="coin" data-bind="options: $root.coins, optionsText: 'currency', optionsValue: 'denomination', selectedOptions: selectedCoin"></select>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="bet">Bet</label>
-                <input type="bet" class="form-control" id="bet" name="bet" data-bind="value: bet" placeholder="0.00" pattern="^\d+(\.|\,)\d{2}$" />
+            <div class="row form-group">
+                <div class="col-xs-3">
+                    <label for="bet">Bet</label>
+                    <input type="bet" class="form-control" id="bet" name="bet" data-bind="value: bet" placeholder="0.00" pattern="^\d+(\.|\,)\d{2}$" />
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Place Bet</button>
         </form>
