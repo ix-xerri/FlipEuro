@@ -1,0 +1,27 @@
+<section id="page-admin" class="page">
+    <div class="page-header">
+        <h1>Admin</h1>
+        <h2>Coins</h2>
+    </div>
+    <div class="row form-group">
+        <div class="col-xs-3">
+            <label for="available-coins">Currently Available Coins</label>
+            <select class="form-control input-sm" id="available-coins" name="available-coins" data-bind="options: $root.coins, optionsText: 'currency'"></select>
+        </div>
+    </div>
+    <div class="add-coin">
+        <form class="frm-add-coin" role="form" data-bind="submit: addCoin" >
+            <div class="row form-group">
+                <div class="col-xs-3">
+                    <label for="currency">Currency</label>
+                    <input type="text" class="form-control input-sm" id="currency" data-bind="value: currency" name="currency" placeholder="Currency" maxlength="3" />
+                </div>
+                <div class="col-xs-3">
+                    <label for="symbol">Currency Symbol</label>
+                    <input type="text" class="form-control input-sm" id="symbol" data-bind="value: symbol" name="symbol" placeholder="Currency Symbol" maxlength="1" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">Add Coin</button>
+        </form>
+    </div>
+</section>
