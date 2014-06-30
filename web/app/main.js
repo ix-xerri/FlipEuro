@@ -44,10 +44,11 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap'],
     });
 });
 
-//Database
+// database
+// using Date.now() as an identifier
 appDb = {
     accounts: [{
-        id: 0,
+        id: 1404151752300,
         firstName: "Matthew",
         lastName: "Xerri",
         dob: 1987-08-30,
@@ -58,8 +59,16 @@ appDb = {
         email: "matt.xerri@gmail.com",
         password: "",
         creditCards:[
-            {id: 0, cardNumber: "4716839212897076", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"},
-            {id: 1, cardNumber: "4506106136972912", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"}
+            {id: 1404151752363, cardNumber: "4716839212897076", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"},
+            {id: 1404151762236, cardNumber: "4506106136972912", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"}
         ]
-    }]
+    }],
+    coins:[
+        {denomination: "$", currency: "USD", name: "United States Dollars"},
+        {denomination: "£", currency: "GBP", name: "Euro"}
+    ],
+    // side: 0 = heads, 1 = tails
+    bets:[
+        {id: 1404151777910, accountId: 0, amount: 2.20, coin: '$', selectedSide: 0, result: 0}
+    ]
 };
