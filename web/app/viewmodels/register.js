@@ -20,6 +20,8 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
                 confirmPassword: this.confirmPassword()
             }
             
+            // todo: password checks using zxcvbn should be carried out.
+            
             // remove validation errors
             $('.has-error').removeClass('has-error');
             

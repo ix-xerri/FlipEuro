@@ -1,7 +1,7 @@
 <section id="page-login" class="page">
     <div class="account login">
         <h1><img src="../../img/flipeuro-logo.png" title="FlipEuro Logo" alt="FlipEuro Logo" /></h1>
-        <form class="frm-account" role="form">
+        <form class="frm-account" role="form" data-bind="submit: login">
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" data-bind="value: email" placeholder="Email Address" maxlength="255" />
@@ -12,7 +12,7 @@
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox"> Remember me
+                    <input type="checkbox" id="rememberMe" name="rememberMe"> Remember me
                 </label>
             </div>
             <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
