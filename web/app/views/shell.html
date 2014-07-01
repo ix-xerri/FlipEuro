@@ -1,5 +1,4 @@
-<!--
-<header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<header class="navbar" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-menu">
@@ -8,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">FlipEuro</a>
+            <a class="navbar-brand" href="#"><img src="../../img/flipeuro-logo.png" height="40px" alt="FlipEuro Logo" title="FlipEuro Logo" /></a>
         </div>
         <div id="top-menu" class="collapse navbar-collapse">
             <ul class="nav navbar-nav" data-bind="foreach: router.navigationModel">
@@ -16,10 +15,14 @@
                     <a data-bind="attr: { href: hash }, text: title"></a>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a data-bind="click: function(){ delete session; window.location.href = '#login'}">Logout</a>
+                </li>
+            </ul>
         </div>
     </div>
 </header>
--->
 <!--
 <div class="router-loader" data-bind="visible: router.isNavigating">
     <i class="fa fa-spinner fa-2x fa-spin active"></i>
