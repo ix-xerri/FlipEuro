@@ -9,6 +9,7 @@
     "durandal-almond": "master",
     "json2": "*",
     "zxcvbn": "*",
+    "validator-js": "~3.16.0"
   },
   "devDependencies": {
     "mocha": "~1.17.1",

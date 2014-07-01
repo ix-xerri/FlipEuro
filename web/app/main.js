@@ -9,6 +9,7 @@ requirejs.config({
         'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
         'modernizr': '../bower_components/modernizr/modernizr',
         'zxcvbn': '../bower_components/zxcvbn/zxcvbn-async',
+        'validator': '../bower_components/validator-js/validator'
     },
     shim: {
         bootstrap: {
@@ -57,11 +58,12 @@ appDb = {
             amount: 25.50
         },
         email: "matt.xerri@gmail.com",
-        password: "",
+        password: "test123", //passwords need to be encrypted (bcrypt) when moved to the server
         creditCards:[
             {id: 1404151752363, cardNumber: "4716839212897076", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"},
             {id: 1404151762236, cardNumber: "4506106136972912", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"}
-        ]
+        ],
+        activated: true // active or disabled account
     }],
     coins:[
         {denomination: "$", currency: "USD", name: "United States Dollars"},

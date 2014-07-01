@@ -38,7 +38,7 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
                 alert('Please enter the name shown on the credit card.');
                 return;
             };
-            if(Date.parse(this.expirationDate()) < Date.now()){
+            if(parseDate(this.expirationDate()).getTime() < Date.now()){
                 alert('Please enter a valid expiration date');
                 return;
             }
@@ -67,6 +67,11 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
             appDb.accounts[0].balance.amount = parseFloat(this.currentAmount()) + parseFloat(this.depositAmount());
             console.log(this.currentAmount());
         },
+        
+        parseDate = function(date) {
+            var parts = date.split('-');
+            return new Date(parts[0], parts[1]-1, parts[2]);
+        }
 
         // Lifecycle
 
