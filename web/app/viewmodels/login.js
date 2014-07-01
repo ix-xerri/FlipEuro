@@ -8,7 +8,7 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
             var fields = {
                 email: this.email(),
                 password: this.password(),
-                remember: this.rememberMe(),
+                rememberMe: this.rememberMe(),
                 expired: false // this would usually be a default value when adding the object to db
             }
             
@@ -64,17 +64,24 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
         // Lifecycle
 
         activate = function () {
+            if(typeof session === 'object'){
+                router.navigate('play');
+                return;
+            }
+            
+            // using above session check for now
             $.getJSON("/api/sessionl", function(data) { 
                 // an api request here would be sent to the server to check if the user is already authnticated. 
                 // for the purposes of this excercise a server is not available and a solutions with cookies was not
                 // implemented as cookies should always have 'secure' and 'httpOnly' set to true
-            })
+            });
         }
 
     return {
         // Place your public properties here
         email: ko.observable(),
         password: ko.observable(),
+        rememberMe:ko.observable(),
             
         login: login,
         
