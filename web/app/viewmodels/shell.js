@@ -11,6 +11,7 @@ define(['plugins/router', "durandal/app"], function (router, app) {
                 {"route":"admin","moduleId":"viewmodels/admin","title":"Admin","nav":true},
                 {"route":"play","moduleId":"viewmodels/play","title":"Play","nav":true},
                 {"route":"register-analyst","moduleId":"viewmodels/register-analyst","title":"Register Security Analyst","nav":true},
+                {"route":"login-analyst","moduleId":"viewmodels/login-analyst","title":"Login Analyst","nav":true},
                 /*{durandal:routes}*/
             ]).buildNavigationModel();
             

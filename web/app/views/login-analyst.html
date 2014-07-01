@@ -1,0 +1,25 @@
+<section id="page-login" class="page">
+    <div class="account login">
+        <h1><img src="../../img/flipeuro-logo.png" title="FlipEuro Logo" alt="FlipEuro Logo" /></h1>
+        <form class="frm-account" role="form" data-bind="submit: login">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" data-bind="value: email" placeholder="Email Address" maxlength="255" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" data-bind="value: password" placeholder="Password" maxlength="72"/>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="rememberMe" name="rememberMe" data-bind= "checkbox: rememberMe"> Remember me
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+        </form>
+        <a href="" class="alt-action" title="Reset your password if you forgot it.">Reset password</a>
+    </div>
+</section>
+<footer>
+    <a href="/#register" title="Register for an account if you do not have one already.">Don't have an account? Register here.</a>
+</footer>

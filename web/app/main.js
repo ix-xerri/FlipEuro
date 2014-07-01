@@ -63,7 +63,8 @@ appDb = {
             {id: 1404151752363, cardNumber: "4716839212897076", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"},
             {id: 1404151762236, cardNumber: "4506106136972912", nameOnCard: "Matthew Xerri", expirationDate: "2016-09"}
         ],
-        activated: true // active or disabled account
+        activated: true, // active or disabled account
+        analyst: false // todo: ideally a better permissions model is devides
     }],
     coins:[
         {denomination: "$", currency: "USD", name: "United States Dollars"},
