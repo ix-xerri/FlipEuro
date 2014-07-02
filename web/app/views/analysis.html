@@ -1,0 +1,15 @@
+<section id="page-analysis" class="page">
+    <div class="page-header">
+        <h1>Analysis</h1>
+    </div>
+    <h2>Most Flipped Coin</h2>
+    <table class="coinFlips table">
+        <thead><tr><th>Coin</th><th>Occurrence</th></tr></thead>
+        <tbody data-bind="foreach: coinAnalysis">
+            <tr>
+                <td data-bind="text: currency"></td>
+                <td data-bind="text: occurrence"></td>
+            </tr>     
+        </tbody>
+    </table>
+</section>
