@@ -72,9 +72,17 @@ appDb = {
     ],
     // side: 0 = heads, 1 = tails
     bets:[
+        {id: 1404151777910, accountId: 1404151752300, amount: 2.20, coin: '$', selectedSide: 0, result: 0},
+        {id: 1404151777910, accountId: 1404151752300, amount: 2.20, coin: '$', selectedSide: 0, result: 0},
+        {id: 1404151777910, accountId: 1404151752300, amount: 2.20, coin: '$', selectedSide: 0, result: 0},
+        {id: 1404151777910, accountId: 1404151752300, amount: 2.20, coin: '$', selectedSide: 0, result: 0},
+        {id: 1404151777910, accountId: 1404151752300, amount: 2.20, coin: '£', selectedSide: 0, result: 0},
+        {id: 1404151777910, accountId: 1404151752300, amount: 2.20, coin: '$', selectedSide: 0, result: 0},
         {id: 1404151777910, accountId: 1404151752300, amount: 2.20, coin: '$', selectedSide: 0, result: 0}
     ],
     sessions:[
         {id: 1404151770910, accountId: 1404151752300, expired: false, rememberMe: false}
     ]
 };
+
+session = {};
