@@ -4,6 +4,17 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
 
         // Handlers
         placeBet = function(){
+            if(this.bet() <= 0){
+                app.showMessage('You have placed an invalid bet');
+                return;
+            }
+            
+            // check if there are enough finds
+            if(session.account.balance.amount < this.bet()){
+                app.showMessage('You do not have enough funds in your account');
+                return;
+            }
+            
             var coinFlip = Math.floor((Math.random() * 2) + 1);
             
             $('div.coin').addClass('flip-animation'); // todo: the animation is only loading once
@@ -11,8 +22,10 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
             
             if(coinFlip === this.selectedSide()){
                 app.showMessage("You Won!");
+                session.account.balance.amount += (this.bet() * 2);
             }else{
                 app.showMessage("Bad Luck. Try Again!");
+                session.account.balance.amount -= this.bet()
             }
             
             appDb.bets.push({
@@ -22,16 +35,15 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
                 selectedSide: this.selectedSide(),
                 result: coinFlip
             });
-            
-            console.log(appDb.bets);
         },
 
         // Lifecycle
 
-        activate = function () {
-        },
-
-        deactivate = function () {
+        activate = function(){
+            if(typeof session.account !== 'object'){
+                router.navigate('login');
+                return;
+            }
         };
 
     return {
@@ -41,6 +53,8 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
         selectedSide: ko.observable(),
         bet: ko.observable(),
         
-        placeBet: placeBet
+        placeBet: placeBet,
+        
+        activate: activate
     };
 });
