@@ -65,8 +65,6 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
             
             this.creditCards.push(creditCard);
             
-            session.account.creditCards.push(creditCard);
-            
             //todo: needs to be saved to the database but not necessary here since items are saved in memeory
             
             return;
