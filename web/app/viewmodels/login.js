@@ -31,11 +31,11 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
                 for(var prop in appDb.accounts[item]) {
                     if(appDb.accounts[item]['email'] === fields.email) {
                         if(appDb.accounts[item]['password'] === fields.password){
-                            // a temp global object that stores the user's session. 
+                            // a temp global object that stores the account details. 
                             // NOT FOR PRODUCTION
                             session = {
                                 id: Date.now(),
-                                accountId: appDb.accounts[item]['id']
+                                account: appDb.accounts[item]
                             }
                             
                             // save the session to the database
@@ -64,13 +64,13 @@ define(["jquery", "knockout", "durandal/app", "durandal/system", "plugins/router
         // Lifecycle
 
         activate = function () {
-            if(typeof session === 'object'){
+            if(typeof session === 'object' && typeof session.account === 'object'){
                 router.navigate('play');
                 return;
             }
             
             // using above session check for now
-            $.getJSON("/api/sessionl", function(data) { 
+            $.getJSON("/api/session", function(response) { 
                 // an api request here would be sent to the server to check if the user is already authnticated. 
                 // for the purposes of this excercise a server is not available and a solutions with cookies was not
                 // implemented as cookies should always have 'secure' and 'httpOnly' set to true
